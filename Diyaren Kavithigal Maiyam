@@ -1,0 +1,114 @@
+# Create a simple HTML template structure for the Diyaren கவிதை மையம் website
+html_template = """
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diyaren கவிதை மையம்</title>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Diyaren கவிதை மையம்</h1>
+        <nav>
+            <a href="#">முகப்பு</a>
+            <a href="#">கவிதைகள்</a>
+            <a href="#">எங்களை பற்றி</a>
+            <a href="#">தொடர்பு</a>
+        </nav>
+    </header>
+    <main>
+        <section class="welcome">
+            <h2>வாழ்த்துகள்!</h2>
+            <p>இது உங்கள் சொந்தக் கவிதைகளுக்கான இடம். படித்துப் பார்க்கவும், பகிரவும்.</p>
+        </section>
+
+        <section class="poems">
+            <h2>கவிதைகள்</h2>
+            <article>
+                <h3>கவிதை 1</h3>
+                <p>பயணம் செய்து கொண்டே இருங்கள்<br>
+                பார்ப்பவர்கள் தோற்க்கட்டும்.<br>
+                வருபவர்கள் அறியட்டும்.</p>
+            </article>
+            <article>
+                <h3>கவிதை 2</h3>
+                <p>சென்றுக்கொண்டே இருந்தால் தான் தெரிகிறது<br>
+                வெற்றி அடையும் பாதையிலும்<br>
+                பல short cut இருக்கிறது என்பது.</p>
+            </article>
+            <article>
+                <h3>கவிதை 3</h3>
+                <p>வாழ்க்கையில் சில கதவுகள் மூடலாம்<br>
+                ஆனால் உங்களின் விடாமுயற்சி எனும்<br>
+                ஏதோ ஒரு சாவி பல கதவுகளை திறக்கும்.</p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>📞 தொடர்புக்கு: 0761340990 | © 2025 Diyaren கவிதை மையம்</p>
+    </footer>
+</body>
+</html>
+"""
+
+css_template = """
+body {
+    font-family: 'Catamaran', sans-serif;
+    margin: 0;
+    background: #fffdf5;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(to right, #ffcc80, #ffe0b2);
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+main .welcome {
+    padding: 2rem;
+    background: #e1f5fe;
+    text-align: center;
+}
+
+.poems {
+    padding: 2rem;
+    background: #fce4ec;
+}
+
+.poems h2, .poems h3 {
+    color: #880e4f;
+}
+
+footer {
+    background: #ffe0b2;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+"""
+
+# Save the HTML and CSS files into a zip
+import zipfile
+
+zip_path = "/mnt/data/Diyaren_Template.zip"
+with zipfile.ZipFile(zip_path, 'w') as zipf:
+    zipf.writestr("index.html", html_template)
+    zipf.writestr("style.css", css_template)
+
+zip_path
